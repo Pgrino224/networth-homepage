@@ -1,0 +1,244 @@
+{
+  "projectName": "networth-homepage",
+  "totalSteps": 9,
+  "validationRules": {
+    "step1": {
+      "name": "Initialize Project",
+      "requiredFiles": [
+        "package.json",
+        "package-lock.json",
+        "next.config.js",
+        "tailwind.config.js",
+        "postcss.config.js",
+        "tsconfig.json",
+        ".eslintrc.json",
+        ".gitignore",
+        "README.md"
+      ],
+      "requiredFolders": [
+        "src",
+        "src/pages",
+        "src/styles",
+        "src/sections",
+        "src/components",
+        "src/lib",
+        "src/hooks",
+        "src/data",
+        "public",
+        "public/images",
+        "public/videos",
+        "public/fonts",
+        "public/icons",
+        "references",
+        "references/semantic-html",
+        "logs",
+        "scripts",
+        "docs"
+      ],
+      "requiredInPages": [
+        "src/pages/index.js",
+        "src/pages/_app.js"
+      ],
+      "requiredInStyles": [
+        "src/styles/globals.css"
+      ],
+      "npmPackages": {
+        "dependencies": [
+          "next",
+          "react",
+          "react-dom",
+          "framer-motion",
+          "clsx"
+        ],
+        "devDependencies": [
+          "tailwindcss",
+          "autoprefixer",
+          "postcss",
+          "eslint",
+          "eslint-config-next",
+          "prettier"
+        ]
+      },
+      "fileContent": {
+        "src/pages/index.js": ["NetWorth", "export default function Home"],
+        "src/styles/globals.css": ["@tailwind base", "@tailwind components", "@tailwind utilities"]
+      }
+    },
+    "step2": {
+      "name": "Configure Build Stack",
+      "requiredUpdates": [
+        "tailwind.config.js"
+      ],
+      "tailwindColors": {
+        "networth": {
+          "black": "#000000",
+          "white": "#FFFFFF",
+          "navy": "#0B1929",
+          "purple": "#6B46C1",
+          "gold": "#FDB462",
+          "orange": "#FF8C42"
+        }
+      },
+      "requiredFiles": [
+        ".prettierrc",
+        "references/semantic-html/1HeroS.html",
+        "references/semantic-html/2WelcomeS.html",
+        "references/semantic-html/3BentoboxS.html",
+        "references/semantic-html/4Open.IP.Universe.html",
+        "references/semantic-html/5UniversebyzentS.html",
+        "references/semantic-html/7GlanceS.html",
+        "references/semantic-html/8BackersS.html",
+        "references/semantic-html/10Join.ZentryS.html",
+        "references/semantic-html/11footerS.html"
+      ]
+    },
+    "step3": {
+      "name": "Create Section Components",
+      "components": [
+        {
+          "file": "src/sections/Hero.jsx",
+          "exports": "export default function Hero",
+          "requiredElements": ["section", "id=\"hero\""]
+        },
+        {
+          "file": "src/sections/Welcome.jsx",
+          "exports": "export default function Welcome",
+          "requiredElements": ["section", "id=\"welcome\""]
+        },
+        {
+          "file": "src/sections/Bento.jsx",
+          "exports": "export default function Bento",
+          "requiredElements": ["section", "id=\"bento\""]
+        },
+        {
+          "file": "src/sections/FounderNote.jsx",
+          "exports": "export default function FounderNote",
+          "requiredElements": ["section", "id=\"founder-note\""]
+        },
+        {
+          "file": "src/sections/Universe.jsx",
+          "exports": "export default function Universe",
+          "requiredElements": ["section", "id=\"universe\""]
+        },
+        {
+          "file": "src/sections/Traits.jsx",
+          "exports": "export default function Traits",
+          "requiredElements": ["section", "id=\"traits\""]
+        },
+        {
+          "file": "src/sections/Glance.jsx",
+          "exports": "export default function Glance",
+          "requiredElements": ["section", "id=\"glance\""]
+        },
+        {
+          "file": "src/sections/JoinCTA.jsx",
+          "exports": "export default function JoinCTA",
+          "requiredElements": ["section", "id=\"join-cta\""]
+        },
+        {
+          "file": "src/sections/Footer.jsx",
+          "exports": "export default function Footer",
+          "requiredElements": ["footer", "id=\"footer\""]
+        }
+      ],
+      "totalComponents": 9
+    },
+    "step4": {
+      "name": "Compose Homepage",
+      "requiredImports": [
+        "import Hero from '../sections/Hero'",
+        "import Welcome from '../sections/Welcome'",
+        "import Bento from '../sections/Bento'",
+        "import FounderNote from '../sections/FounderNote'",
+        "import Universe from '../sections/Universe'",
+        "import Traits from '../sections/Traits'",
+        "import Glance from '../sections/Glance'",
+        "import JoinCTA from '../sections/JoinCTA'",
+        "import Footer from '../sections/Footer'"
+      ],
+      "componentOrder": [
+        "<Hero />",
+        "<Welcome />",
+        "<Bento />",
+        "<FounderNote />",
+        "<Universe />",
+        "<Traits />",
+        "<Glance />",
+        "<JoinCTA />",
+        "<Footer />"
+      ]
+    },
+    "step5": {
+      "name": "Add Animations",
+      "requiredInComponents": {
+        "framerMotion": "from 'framer-motion'",
+        "animations": ["motion", "useScroll", "useTransform", "useInView"]
+      }
+    },
+    "step6": {
+      "name": "Style & Theming",
+      "requiredUpdates": [
+        "tailwind.config.js",
+        "src/styles/globals.css"
+      ],
+      "assetsRequired": [
+        "public/images/networth-logo",
+        "public/fonts/"
+      ]
+    },
+    "step7": {
+      "name": "Responsive Design",
+      "breakpoints": {
+        "mobile": "640px",
+        "tablet": "768px",
+        "desktop": "1024px",
+        "wide": "1280px"
+      },
+      "requiredClasses": ["sm:", "md:", "lg:", "xl:"]
+    },
+    "step8": {
+      "name": "Performance Optimization",
+      "metrics": {
+        "lighthouseScore": 90,
+        "firstContentfulPaint": 1500,
+        "largestContentfulPaint": 2500,
+        "totalBlockingTime": 300,
+        "cumulativeLayoutShift": 0.1
+      },
+      "optimizations": [
+        "Image optimization",
+        "Font optimization",
+        "Code splitting",
+        "Lazy loading"
+      ]
+    },
+    "step9": {
+      "name": "Deploy",
+      "requiredFiles": [
+        ".env.production",
+        "vercel.json"
+      ],
+      "buildChecks": [
+        "npm run build",
+        "No build errors",
+        "Bundle size < 500KB"
+      ]
+    }
+  },
+  "globalValidation": {
+    "noForbiddenPatterns": [
+      "components/sections",
+      "01_Hero",
+      "02_Welcome",
+      "app/",
+      "@/components"
+    ],
+    "requiredPatterns": [
+      "../sections/",
+      "networth-",
+      "financial mastery"
+    ],
+    "maxWarnings": 0,
+    "maxErrors": 0
+  }
+}
