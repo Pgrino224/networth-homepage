@@ -1,26 +1,53 @@
-@import "tailwindcss";
+/* Step 1b: Cleaned Global Styles for NetWorth */
+/* Removes all default Next.js styles and provides minimal foundation */
+/* This file will be expanded in Step 6 with NetWorth theming */
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* IMPORTANT: Keep this file minimal until Step 6 (Style & Theming) */
+/* Only essential Tailwind directives and basic resets are included */
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* Tailwind CSS Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Basic CSS Reset and Foundation */
+/* These ensure consistent rendering across browsers */
+@layer base {
+  /* Smooth scrolling for the entire page */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Remove default margins and ensure full height */
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+  }
+  
+  /* Box sizing for all elements */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom utility classes will be added in Step 6 */
+@layer utilities {
+  /* NetWorth-specific utilities go here */
 }
+
+/* Component styles will be added in Step 6 */
+@layer components {
+  /* Reusable component styles go here */
+}
+
+/* 
+  Note: Additional styles to be added in Step 6:
+  - NetWorth brand colors
+  - Typography system
+  - Animation utilities
+  - Component-specific styles
+  - Responsive utilities
+*/
