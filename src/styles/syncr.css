@@ -1,0 +1,76 @@
+/* Import Fonts - ADD THIS TO YOUR EXISTING GLOBAL CSS FILE */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+/* Font Classes */
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-space-grotesk {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Custom scrollbar for SYNCR pages */
+.syncr-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.syncr-scrollbar::-webkit-scrollbar-track {
+  background: #0B1929;
+}
+
+.syncr-scrollbar::-webkit-scrollbar-thumb {
+  background: #6B46C1;
+  border-radius: 4px;
+}
+
+.syncr-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #FDB462;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Remove focus outlines for mouse users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Range input styling for Problem Section */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #6B46C1;
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #6B46C1;
+  cursor: pointer;
+  border: none;
+}
+
+/* Prevent text selection on interactive elements */
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

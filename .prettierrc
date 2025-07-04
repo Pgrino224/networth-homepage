@@ -1,0 +1,15 @@
+# Create .prettierrc file
+@"
+{
+  "semi": true,
+  "trailingComma": "es5",
+  "singleQuote": true,
+  "printWidth": 100,
+  "tabWidth": 2,
+  "useTabs": false,
+  "bracketSpacing": true,
+  "jsxBracketSameLine": false,
+  "arrowParens": "always",
+  "endOfLine": "lf"
+}
+"@ | Out-File -FilePath .prettierrc -Encoding utf8

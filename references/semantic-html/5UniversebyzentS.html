@@ -1,0 +1,115 @@
+<section class="relative bg-[#f0ff40] text-black min-h-[400vh] overflow-x-hidden">
+
+  <!-- 🧷 Sticky Scroll-Locked Container -->
+  <div class="sticky top-0 h-screen w-full flex items-start pt-24 px-8 z-10">
+    <div class="w-full max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+      
+      <!-- 🔤 LEFT SIDE: Title, CTA, Scroll-Driven Steps -->
+      <div class="flex flex-col gap-12" data-role="scroll-text-zone">
+
+        <!-- Static Title + CTA (remains fixed throughout) -->
+        <div>
+          <h1 class="text-5xl md:text-6xl font-extrabold uppercase leading-tight mb-4">
+            The Universe<br />Powered by ZENT
+          </h1>
+          <a
+            href="https://vault.zentry.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block px-6 py-2 bg-black text-white text-xs rounded-full font-semibold uppercase tracking-widest hover:opacity-90 transition"
+          >
+            Enter Vault
+          </a>
+        </div>
+
+        <!-- 🔁 Scroll-Controlled Step Stack -->
+        <ul class="flex flex-col gap-8" role="list" aria-label="Zentry Scroll Narrative">
+          
+          <!-- Step 01 (initially active) -->
+          <li
+            class="transition-opacity duration-300 ease-in-out"
+            data-step="1"
+            data-active="true"
+            id="nexusScrollAnchor0"
+          >
+            <div class="flex items-center gap-2 text-gray-500 uppercase text-xs font-mono mb-1">
+              <span>01</span>
+              <span>Shaping Zentry Collectively</span>
+            </div>
+            <div class="pl-5 border-l-2 border-black font-medium text-sm">
+              Participate in governance, influence key decisions in the ever-growing Zentry Universe that is limited only by people’s imaginations.
+            </div>
+          </li>
+
+          <!-- Step 02 -->
+          <li
+            class="opacity-50 transition-opacity duration-300 ease-in-out"
+            data-step="2"
+            data-active="false"
+            id="nexusScrollAnchor1"
+          >
+            <div class="flex items-center gap-2 text-gray-500 uppercase text-xs font-mono mb-1">
+              <span>02</span>
+              <span>Unlocking Economic Opportunity</span>
+            </div>
+            <div class="pl-5 border-l-2 border-black font-medium text-sm hidden" aria-hidden="true">
+              ZENT, a commodity-based currency that unlocks exclusive benefits, airdrops, quotas, and co-creation within and beyond Zentry ecosystem.
+            </div>
+          </li>
+
+          <!-- Step 03 -->
+          <li
+            class="opacity-50 transition-opacity duration-300 ease-in-out"
+            data-step="3"
+            data-active="false"
+            id="nexusScrollAnchor2"
+          >
+            <div class="flex items-center gap-2 text-gray-500 uppercase text-xs font-mono mb-1">
+              <span>03</span>
+              <span>Sharing Value Accrued</span>
+            </div>
+            <div class="pl-5 border-l-2 border-black font-medium text-sm hidden" aria-hidden="true">
+              ZENT holders thrive as Zentry grows, benefiting from the expansive partnerships, treasury investment and economic activities.
+            </div>
+          </li>
+
+        </ul>
+      </div>
+
+      <!-- 🎥 RIGHT SIDE: Animated Symbol Area -->
+      <div class="flex justify-center items-center" data-role="animated-symbol">
+        <div class="relative w-[75%] aspect-square">
+
+          <!-- Video Symbol 1 (visible initially) -->
+          <video
+            autoplay muted loop playsinline preload="metadata"
+            class="absolute inset-0 w-full h-full object-contain transition-opacity duration-500"
+            data-video-step="1"
+            data-active="true"
+            src="/export/videos/alpha/nexus/symbol_1@lg.webm"
+          ></video>
+
+          <!-- Video Symbol 2 -->
+          <video
+            autoplay muted loop playsinline preload="metadata"
+            class="absolute inset-0 w-full h-full object-contain opacity-0 transition-opacity duration-500"
+            data-video-step="2"
+            data-active="false"
+            src="/export/videos/alpha/nexus/symbol_2@lg.webm"
+          ></video>
+
+          <!-- Video Symbol 3 -->
+          <video
+            autoplay muted loop playsinline preload="metadata"
+            class="absolute inset-0 w-full h-full object-contain opacity-0 transition-opacity duration-500"
+            data-video-step="3"
+            data-active="false"
+            src="/export/videos/alpha/nexus/symbol_3@lg.webm"
+          ></video>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

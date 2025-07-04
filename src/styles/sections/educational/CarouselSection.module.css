@@ -1,0 +1,257 @@
+/* Section Container */
+.feedbackLoopSection {
+  background: #000000;
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+  min-height: 150vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  width: 100%;
+  /* Add flexbox centering */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Section Title */
+.sectionTitle {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 550;
+  font-size: 80px;
+  color: #FFFFFF;
+  text-align: center;
+  margin-bottom: 100px;
+  letter-spacing: -0.02em;
+  width: 100%;
+}
+
+/* Feedback Loop Container */
+.feedbackLoop {
+  position: relative;
+  width: 840px;
+  height: 840px;
+  /* Remove margin auto since parent is now flex */
+  box-sizing: content-box;
+  overflow: visible;
+}
+
+/* Rotating Line Container */
+.rotatingLineContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.connectionLine {
+  width: 100%;
+  height: 100%;
+}
+
+/* Glassmorphism Cards */
+.card {
+  position: absolute;
+  width: 196px;
+  height: 196px;
+  z-index: 3;
+}
+
+.cardInner {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background: rgba(20, 20, 20, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glassmorphism hover effect */
+.cardInner:hover {
+  background: rgba(30, 30, 30, 0.9);
+  border-color: rgba(253, 180, 98, 0.3);
+  transform: scale(1.05);
+  box-shadow: 0 8px 32px rgba(253, 180, 98, 0.1);
+}
+
+/* Card Image Container */
+.cardImageContainer {
+  width: 84px;
+  height: 84px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: rgba(253, 180, 98, 0.1);
+  padding: 14px;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+}
+
+/* Card Title */
+.cardTitle {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+/* Card Description */
+.cardDescription {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.4;
+}
+
+/* Tablet Styles */
+@media (max-width: 1024px) {
+  .sectionTitle {
+    font-size: 48px;
+    margin-bottom: 60px;
+  }
+
+  .feedbackLoop {
+    width: 700px;
+    height: 700px;
+  }
+
+  .card {
+    width: 168px;
+    height: 168px;
+  }
+
+  .cardInner {
+    padding: 16px;
+  }
+
+  .cardImageContainer {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 14px;
+  }
+
+  .cardTitle {
+    font-size: 16px;
+  }
+
+  .cardDescription {
+    font-size: 13px;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .feedbackLoopSection {
+    padding: 80px 0;
+    min-height: auto;
+  }
+
+  .sectionTitle {
+    font-size: 36px;
+    margin-bottom: 40px;
+    padding: 0 20px;
+  }
+
+  .feedbackLoop {
+    width: 500px;
+    height: 500px;
+    max-width: calc(100vw - 40px);
+  }
+
+  /* Adjust card positions for smaller radius on mobile */
+  .card {
+    width: 140px;
+    height: 140px;
+  }
+
+  .cardInner {
+    padding: 14px;
+  }
+
+  .cardInner:hover {
+    transform: none;
+  }
+
+  .cardImageContainer {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+
+  .cardTitle {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  .cardDescription {
+    font-size: 11px;
+  }
+
+  /* Disable rotation on mobile for performance */
+  .rotatingLineContainer {
+    animation: none !important;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 400px) {
+  .feedbackLoop {
+    width: 360px;
+    height: 360px;
+  }
+  
+  .card {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .cardInner {
+    padding: 10px;
+  }
+  
+  .cardImageContainer {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .cardTitle {
+    font-size: 11px;
+  }
+  
+  .cardDescription {
+    font-size: 9px;
+  }
+}

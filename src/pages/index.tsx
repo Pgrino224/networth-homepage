@@ -1,68 +1,72 @@
-import Head from 'next/head'
-import type { NextPage } from 'next'
+// Step 4: Homepage Assembly
+// This file imports and renders all 9 sections in the correct order
+// NetWorth - Measure Your Worth. Master Your Future.
 
-const Home: NextPage = () => {
+import Head from 'next/head';
+
+// Import all 9 section components from Step 3
+import Hero from '../sections/Hero';
+import Welcome from '../sections/Welcome';
+import Bento from '../sections/Bento';
+import FounderNote from '../sections/FounderNote';
+import Universe from '../sections/Universe';
+import Traits from '../sections/Traits';
+import Glance from '../sections/Glance';
+import JoinCTA from '../sections/JoinCTA';
+import Footer from '../sections/Footer';
+
+export default function Home() {
   return (
     <>
       <Head>
         {/* SEO and Meta Tags */}
-        <title>NetWorth - Master Your Financial Future</title>
-        <meta name="description" content="Where Financial Education Meets Immersive Gameplay. Master the art of wealth building through an innovative trait-based system." />
+        <title>NetWorth - Measure Your Worth. Master Your Future.</title>
+        <meta name="description" content="Transform your financial future through immersive gameplay. Master the 10 traits of wealth builders with NetWorth's revolutionary gamified platform." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         
-        {/* Favicon - to be added in Step 6d */}
+        {/* Open Graph / Social Media */}
+        <meta property="og:title" content="NetWorth - Measure Your Worth" />
+        <meta property="og:description" content="Transform your financial future through immersive gameplay." />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="NetWorth" />
+        
+        {/* Favicon - placeholder */}
         <link rel="icon" href="/favicon.ico" />
         
-        {/* Open Graph Tags for Social Sharing */}
-        <meta property="og:title" content="NetWorth - Master Your Financial Future" />
-        <meta property="og:description" content="Where Financial Education Meets Immersive Gameplay" />
-        <meta property="og:type" content="website" />
-        
-        {/* Additional meta tags can be added as needed */}
+        {/* Fonts - will be configured in Step 6 */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </Head>
 
-      {/* Main Content Area */}
-      {/* This main element will contain all 9 sections in Step 4 */}
+      {/* Main content wrapper */}
       <main className="min-h-screen bg-white">
-        {/* Temporary placeholder content - will be removed in Step 4 */}
-        <div className="flex items-center justify-center min-h-screen">
-          <div className="text-center">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
-              NetWorth
-            </h1>
-            <p className="text-gray-600">
-              Website under construction
-            </p>
-            <p className="text-sm text-gray-400 mt-8">
-              Step 1b Complete - Ready for section development
-            </p>
-          </div>
-        </div>
-        
-        {/* Section imports will be added here in Step 4 */}
-        {/* 
-          Future structure:
-          <Hero />
-          <Welcome />
-          <Bento />
-          <FounderNote />
-          <Universe />
-          <Traits />
-          <Glance />
-          <JoinCTA />
-          <Footer />
-        */}
+        {/* Section 1: Hero - "MEASURE YOUR WORTH" */}
+        <Hero />
+
+        {/* Section 2: Welcome - Introduction with waitlist signup */}
+        <Welcome />
+
+        {/* Section 3: Bento - "Your Worth is Your Weapon" feature grid */}
+        <Bento />
+
+        {/* Section 4: Founder's Note - Personal message about the mission */}
+        <FounderNote />
+
+        {/* Section 5: Universe - Scroll-revealing 4 core values */}
+        <Universe />
+
+        {/* Section 6: Traits - The 10 character traits system */}
+        <Traits />
+
+        {/* Section 7: Glance - 2x2 metrics grid showcasing impact */}
+        <Glance />
+
+        {/* Section 8: Join CTA - Call to action to join NetWorth */}
+        <JoinCTA />
+
+        {/* Section 9: Footer - Links and animated NetWorth logo */}
+        <Footer />
       </main>
     </>
-  )
+  );
 }
-
-export default Home
-
-// Development Notes:
-// - This file is intentionally minimal to avoid conflicts
-// - All sections will be imported from src/sections/ in Step 4
-// - Global styles are handled in styles/globals.css
-// - No component-specific styles are included here
-// - The temporary placeholder will be removed when sections are added
-// - Using TypeScript with NextPage type for type safety

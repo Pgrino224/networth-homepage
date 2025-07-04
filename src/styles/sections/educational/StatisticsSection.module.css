@@ -1,0 +1,128 @@
+.statisticsSection {
+  @apply relative w-full bg-black overflow-hidden;
+  min-height: 700px;
+  /* Adjusted padding to accommodate absolute canvas positioning */
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+/* Full-section background canvas */
+.canvasBackground {
+  @apply absolute inset-0 w-full h-full;
+  z-index: 0;
+}
+
+.canvas {
+  @apply w-full h-full;
+}
+
+/* Content container - layered above canvas */
+.contentContainer {
+  @apply relative mx-auto;
+  /* Fixed 72px (0.75 inches) padding on left and right */
+  padding-left: 72px;
+  padding-right: 72px;
+  width: 100%;
+  z-index: 1;
+}
+
+.title {
+  @apply text-5xl md:text-7xl font-extrabold text-white mb-6 text-center;
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.02em;
+  /* Enhanced text shadow for better readability over particles */
+  text-shadow: 
+    0 0 30px rgba(253, 180, 98, 0.2),
+    0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.description {
+  @apply text-lg md:text-xl text-gray-300 max-w-4xl mx-auto text-center leading-relaxed;
+  /* Reduced margin-bottom from mb-16 (64px) to mb-8 (32px) */
+  margin-bottom: 32px;
+  font-family: 'Inter', sans-serif;
+  opacity: 0.9;
+  /* Subtle text shadow for readability */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1500px) {
+  .statisticsSection {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  
+  .title {
+    @apply text-4xl md:text-5xl;
+  }
+  
+  .description {
+    @apply text-base md:text-lg;
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .statisticsSection {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    min-height: 700px;
+  }
+  
+  .contentContainer {
+    /* Reduce padding on mobile for better use of space */
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  
+  .title {
+    @apply text-3xl;
+  }
+  
+  .description {
+    @apply text-base;
+    margin-bottom: 20px;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .contentContainer {
+    /* Slightly reduced padding on tablets */
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+
+/* Ultra-wide screen adjustments */
+@media (min-width: 2560px) {
+  .contentContainer {
+    /* Optional: Add max-width for ultra-wide screens if content becomes too stretched */
+    max-width: 2400px;
+  }
+}
+
+/* Performance optimizations */
+@media (prefers-reduced-motion: reduce) {
+  .canvas {
+    /* Simplified animations for accessibility */
+  }
+}
+
+/* Ensure proper stacking context */
+.statisticsSection * {
+  transform-style: preserve-3d;
+}
+
+/* Loading state - subtle background glow */
+.canvasBackground::before {
+  content: '';
+  @apply absolute inset-0;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(253, 180, 98, 0.03) 0%,
+    rgba(0, 0, 0, 0) 70%
+  );
+  pointer-events: none;
+}
